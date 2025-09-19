@@ -1,0 +1,76 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run the `open default settings` command
+// from the command palette or from `Zed` application menu.
+{
+  "languages": {
+    "Python": {
+      "language_servers": [
+        "ruff",
+        "pyright"
+      ]
+    }
+  },
+  "lsp": {
+    "biome": {
+      "settings": {
+        "require_config_file": true
+      }
+    }
+  },
+  "formatter": {
+    "language_server": {
+      "name": "biome"
+    }
+  },
+  "code_actions_on_format": {
+    "source.fixAll.biome": true,
+    "source.organizeImports.biome": true
+  },
+  // Settings
+  "ensure_final_newline_on_save": false,
+  // "remove_trailing_whitespace_on_save": true,
+  "base_keymap": "Atom",
+  "format_on_save": "language_server",
+  "scroll_beyond_last_line": "vertical_scroll_margin",
+  // Editor customization
+  "toolbar": {
+    "quick_actions": false
+  },
+  "tabs": {
+    "git_status": true
+  },
+  "tab_bar": {
+    "show_nav_history_buttons": false
+  },
+  // UI
+  "ui_font_family": "FiraCode Nerd Font",
+  "ui_font_weight": 500,
+  "ui_font_size": 14,
+  // Buffer
+  "buffer_font_size": 14,
+  "buffer_font_family": "FiraCode Nerd Font",
+  "buffer_font_weight": 500,
+  // Workspace
+  "icon_theme": "Catppuccin Mocha",
+  "terminal": {
+    "font_family": "FiraCode Nerd Font"
+  },
+  // Miscellaneous
+  "features": {
+    "edit_prediction_provider": "none"
+  },
+  "theme": {
+    "mode": "dark",
+    "light": "One Light",
+    "dark": "One Dark"
+  },
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  }
+}
