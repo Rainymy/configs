@@ -4,7 +4,8 @@
     "catppuccin": true,
     "biome": true,
     "ruff": true,
-    "superhtml": true
+    "superhtml": true,
+    "git_firefly": true
   },
   "languages": {
     "Python": {
