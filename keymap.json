@@ -1,0 +1,16 @@
+[
+  {
+    "context": "Editor",
+    "bindings": {
+      "alt-'": "editor::ToggleSelectedDiffHunks",
+      "ctrl-shift-right": "editor::SelectToNextWordEnd",
+      "ctrl-shift-left": "editor::SelectToPreviousWordStart",
+      "ctrl-'": [
+        "editor::ToggleComments",
+        {
+          "advance_downwards": false
+        }
+      ]
+    }
+  }
+]
