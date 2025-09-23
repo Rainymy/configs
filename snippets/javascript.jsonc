@@ -1,0 +1,287 @@
+{
+  // Each snippet must have a name and body, but the prefix and description are optional.
+  // The prefix is used to trigger the snippet, but when omitted then the name is used.
+  // Use placeholders like $1, $2 or ${1:defaultValue} to define tab stops.
+  // The $0 determines the final cursor position.
+  // Placeholders with the same value are linked.
+  "use strict": {
+    "prefix": "use strict",
+      "body": [
+        "\"use strict\""
+      ],
+        "description": "use strict"
+  },
+  // =================== GENERIC ===================
+  "console.log": {
+    "prefix": "log",
+      "body": [
+        "console.log($0)"
+      ],
+        "description": "Snippet for console"
+  },
+  "Promise": {
+    "prefix": "promise",
+      "body": [
+        "new Promise((resolve, reject) => {",
+        "\t${0}",
+        "});"
+      ],
+        "description": "Snippet for Promise"
+  },
+  // =================== FUNCTION ===================
+  "function": {
+    "prefix": "function",
+      "body": [
+        "function ${1:methodName} () {",
+        "\t$0",
+        "}"
+      ],
+        "description": "Snippet for named function body"
+  },
+  "anonymous function": {
+    "prefix": "f",
+      "body": [
+        "function (${1:params}) {",
+        "\t$0",
+        "}"
+      ],
+        "description": "Snippet for anonymous function body"
+  },
+  "async function": {
+    "prefix": [
+      "af",
+      "asyncf"
+    ],
+      "body": [
+        "async (${1:params}) => { return $0; }"
+      ],
+        "description": "Snippet for anonymous async function body"
+  },
+  "immediately-invoked function expression": {
+    "prefix": "iife",
+      "body": [
+        ";(function (${1:arguments}) {",
+        "\t${0}",
+        "})(${2});"
+      ],
+        "description": "Snippet for anonymous function body"
+  },
+  "generator": {
+    "prefix": [
+      "gf",
+      "generator"
+    ],
+      "body": [
+        "function* ${1:name}(${2:arguments}) {",
+        "\t${0}",
+        "}"
+      ],
+        "description": "Snippet for anonymous function body"
+  },
+  // =================== CONTROL FLOW ===================
+  "if": {
+    "prefix": "if",
+      "body": [
+        "if (${1:condition}) {",
+        "\t${0}",
+        "}"
+      ],
+        "description": "Snippet for flow if body"
+  },
+  "for loop": {
+    "prefix": "for",
+      "body": [
+        "for (let ${1:i} = 0, ${2:len} = ${3:iterable}.length; ${1:i} < ${2:len}; ${1:i}++) {",
+        "\t${0}",
+        "}"
+      ],
+        "description": "Snippet for flow for loop body"
+  },
+  "for in loop": {
+    "prefix": "forin",
+      "body": [
+        "for (let ${1:key} in ${2:source}) {",
+        "\tif (${2:source}.hasOwnProperty(${1:key})) {",
+        "\t\t${0}",
+        "\t}",
+        "}"
+      ],
+        "description": "Snippet for flow for in loop body"
+  },
+  "for of loop": {
+    "prefix": "forof",
+      "body": [
+        "for (const ${1:key} of ${2:source}) {",
+        "\t${0}",
+        "}"
+      ],
+        "description": "Snippet for flow for of loop body"
+  },
+  "try/catch": {
+    "prefix": "try",
+      "body": [
+        "try {",
+        "\t${0}",
+        "} catch (${1:err}) {",
+        "\t",
+        "}"
+      ],
+        "description": "Snippet for flow for of loop body"
+  },
+  // =================== IMPORT/REQUIRE ===================
+  "module require": {
+    "prefix": "require",
+      "body": [
+        "const $1 = require(\"${1:package}\");"
+      ],
+        "description": "Snippet for require(\"package\")"
+  },
+  "module import": {
+    "prefix": "import",
+      "body": [
+        "import ${1:*} from '${1:module}'"
+      ],
+        "description": "Snippet for import module"
+  },
+  // =================== TIMEOUT ===================
+  "setTimeout": {
+    "prefix": "setTimeout",
+      "body": [
+        "setTimeout(() => {",
+        "\t${0}",
+        "}, ${1:delay})"
+      ],
+        "description": "Snippet for setTimeout"
+  },
+  "setInterval": {
+    "prefix": "setInterval",
+      "body": [
+        "setInterval(() => {",
+        "\t${0}",
+        "}, ${1:delay})"
+      ],
+        "description": "Snippet for setInterval"
+  },
+  "setImmediate": {
+    "prefix": "setImmediate",
+      "body": [
+        "setImmediate(() => {",
+        "\t${0}",
+        "})"
+      ],
+        "description": "Snippet for setImmediate"
+  },
+  // =================== ARRAY ===================
+  "forEach loop": {
+    "prefix": "foreach",
+      "body": [
+        "${1:iterable}.forEach((${2:item}) => {",
+        "\t${0}",
+        "});"
+      ],
+        "description": "Snippet for forEach"
+  },
+  "chain forEach": {
+    "prefix": ".foreach",
+      "body": [
+        "forEach((${1:item}) => {",
+        "\t${0}",
+        "})"
+      ],
+        "description": "Snippet for chain forEach"
+  },
+  "map": {
+    "prefix": "map",
+      "body": [
+        "${1:iterable}.map((${2:item}) => {",
+        "\t${0}",
+        "});"
+      ],
+        "description": "Snippet for Array map"
+  },
+  "chain map": {
+    "prefix": ".map",
+      "body": [
+        "map((${1:item}) => { return ${0}; });"
+      ],
+        "description": "Snippet for chain Array map"
+  },
+  "reduce": {
+    "prefix": "reduce",
+      "body": [
+        "${1:iterable}.reduce((${2:previous}, ${3:current}) => {",
+        "\t${0}",
+        "}, ${4:initial})"
+      ],
+        "description": "Snippet for Array reduce"
+  },
+  "chain reduce": {
+    "prefix": ".reduce",
+      "body": [
+        "reduce((${1:previous}, ${2:current}) => {",
+        "\t${0}",
+        "}, ${4:initial});"
+      ],
+        "description": "Snippet for Array chain reduce"
+  },
+  "filter": {
+    "prefix": "filter",
+      "body": [
+        "${1:iterable}.filter((${2:item}) => {",
+        "\t${0}",
+        "});"
+      ],
+        "description": "Snippet for Array filter"
+  },
+  "chain filter": {
+    "prefix": ".filter",
+      "body": "filter((${1:item}) => { return ${0}; });",
+        "description": "Snippet for Array chain filter"
+  },
+  "find": {
+    "prefix": "find",
+      "body": [
+        "${1:iterable}.find((${2:item}) => {",
+        "\t${0}",
+        "});"
+      ],
+        "description": "Snippet for Array find"
+  },
+  "chain find": {
+    "prefix": ".find",
+      "body": [
+        "find((${1:item}) => { return ${0}; });"
+      ],
+        "description": "Snippet for chain Array find"
+  },
+  "every": {
+    "prefix": "every",
+      "body": [
+        "${1:iterable}.every((${2:item}) => {",
+        "\t${0}",
+        "});"
+      ],
+        "description": "Snippet for Array every"
+  },
+  "chain every": {
+    "prefix": ".every",
+      "body": "every((${1:item}) => { return ${0}; });",
+        "description": "Snippet for chain Array every"
+  },
+  "some": {
+    "prefix": "some",
+      "body": [
+        "${1:iterable}.some((${2:item}) => {",
+        "\t${0}",
+        "});"
+      ],
+        "description": "Snippet for Array some"
+  },
+  "chain some": {
+    "prefix": ".some",
+      "body": [
+        "some((${1:item}) => { return ${0}; });"
+      ],
+        "description": "Snippet for chain Array some"
+  }
+}
